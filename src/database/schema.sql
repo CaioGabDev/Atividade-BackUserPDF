@@ -13,8 +13,9 @@ CREATE TABLE post (
     id SERIAL PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
     content TEXT NOT NULL,
+    photo TEXT,
     user_id INTEGER REFERENCES usuarios(id) ON DELETE CASCADE
-);
+);  
 
 INSERT INTO usuarios (name, email, password) VALUES 
     ('Luizao00', 'Luizao00@gmail.com', 'wow'),
