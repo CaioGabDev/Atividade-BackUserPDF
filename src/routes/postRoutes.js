@@ -3,6 +3,8 @@ const express = require('express');
 const router = express.Router();
 
 const postController = require("../controllers/postControllers");
+const apiKeyMiddleware = require("../config/apiKey"); // 🔐
+router.use(apiKeyMiddleware); // 🔒 Protege todas as rotas
 
 router.get("/", postController.getAllPosts);
 router.get("/:id", postController.getById);
